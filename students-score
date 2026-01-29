@@ -1,0 +1,24 @@
+-- Create students table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+
+-- Create scores table
+CREATE TABLE scores (
+    student_id INT,
+    score INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+-- Insert data into students
+INSERT INTO students (student_id, name, age) VALUES
+(1, 'Ali', 21),
+(2, 'Aina', 20),
+(3, 'Haziq', 22);
+
+-- Insert data into scores
+INSERT INTO scores (student_id, score) VALUES
+(1, 90),
+(2, 80),
+(3, 85);
